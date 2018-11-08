@@ -3,27 +3,30 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void swap(int *a, int *b)
-{
-	int temp;
-	
-	temp = *a;
-	*a = *b;
-	*b = temp;
-	
-}
-
-
 int main(int argc, char *argv[]) {
 	
-	int x = 10;
-	int y = 20;
+	int a[10];
+	int i;
+	int minimum;
+	int *ptr = a;
 	
-	printf("x : %d, y : %d\n", x, y);
+	printf("input 10 numbers : ");
+	for(i=0; i<10; i++){
+		scanf("%d", &a[i]);
+	}
 	
-	swap(&x, &y);
-	
-	printf("x : %d, y : %d\n", x, y);
+	minimum = a[0];
+	i = 0;
+	while(i<10)
+	{
+		if(minimum>*ptr){
+			minimum = a[i];
+		}
+		
+		ptr++;
+		i++;
+	}
+	printf("minimum : %d", minimum);
 	
 	return 0;
 }
