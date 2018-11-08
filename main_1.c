@@ -9,6 +9,7 @@ int main(int argc, char *argv[]) {
 	int grade[5];
 	int sum = 0;
 	float avg;
+	int *ptr = grade;
 	
 	for(i=0; i<5; i++){
 		printf("input value (%d) : ", i);
@@ -20,7 +21,7 @@ int main(int argc, char *argv[]) {
 	}
 	
 	for(i=0; i<5; i++){
-		sum += grade[i];
+		sum += *(ptr+i);
 	}
 	
 	avg = (float)(sum/5);
