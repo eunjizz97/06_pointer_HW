@@ -7,6 +7,8 @@ int main(int argc, char *argv[]) {
 	
 	int i;
 	int grade[5];
+	int sum = 0;
+	float avg;
 	
 	for(i=0; i<5; i++){
 		printf("input value (%d) : ", i);
@@ -16,6 +18,14 @@ int main(int argc, char *argv[]) {
 	for(i=0; i<5; i++){
 		printf("grade[%d] = %d\n", i, grade[i]);
 	}
+	
+	for(i=0; i<5; i++){
+		sum += grade[i];
+	}
+	
+	avg = (float)(sum/5);
+	
+	printf("\n average : %f\n", avg);
 	
 	return 0;
 }
